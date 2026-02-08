@@ -22,32 +22,63 @@
  * @returns {string} The driving action to take
  */
 export function getTrafficAction(color) {
+
+  let action = ""
+
   switch(color){
     case "GREEN" || "Green" || "green" :
-      return "GO"
+      action = "GO"
+      break
+
     case "Green" :
-      return "GO"
+      action = "GO"
+      break
+
     case "green" :
-      return "GO"
+      action = "GO"
+      break
+
     case "YELLOW" :
-      return "SLOW DOWN"
+      action = "SLOW DOWN"
+      break
+
     case "Yellow" :
-      return "SLOW DOWN"
+      action = "SLOW DOWN"
+      break
+
     case "yellow" :
-      return "SLOW DOWN"
+      action = "SLOW DOWN"
+      break
+
     case "RED" :
-      return "STOP"
+      action = "STOP"
+      break
+
     case "Red" :
-      return "STOP"
+      action = "STOP"
+      break
+
     case "red" :
-      return "STOP"
+      action = "STOP"
+      break
+
     case "FLASHING RED" :
-      return "STOP AND PROCEED WITH CAUTION"
+      action = "STOP AND PROCEED WITH CAUTION"
+      break
+
     case "Flashing Red" :
-      return "STOP AND PROCEED WITH CAUTION"
+      action = "STOP AND PROCEED WITH CAUTION"
+      break
+
     case "flashing red" :
-      return "STOP AND PROCEED WITH CAUTION"
+      action = "STOP AND PROCEED WITH CAUTION"
+      break
+
     default :
-      return"INVALID SIGNAL"
+      action ="INVALID SIGNAL"
+      break
   }
+
+  return action
+  
 }

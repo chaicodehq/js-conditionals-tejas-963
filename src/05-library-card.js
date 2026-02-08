@@ -33,12 +33,18 @@
  * @returns {{ allowed: boolean, message: string }}
  */
 export function canBorrowBook(memberAge, hasValidCard, overdueBooks) {
+
+  let allowedMessage = ""
+
   if(memberAge < 6)
-    return { allowed: false, message: "Too young - must be at least 6 years old" }
+    allowedMessage = { allowed: false, message: "Too young - must be at least 6 years old" }
   else if(!hasValidCard)
-    return { allowed: false, message: "Invalid library card - please renew at the front desk" }
+    allowedMessage = { allowed: false, message: "Invalid library card - please renew at the front desk" }
   else if(overdueBooks)
-    return { allowed: false, message: `Please return your ${overdueBooks} overdue book(s) first` }
+    allowedMessage = { allowed: false, message: `Please return your ${overdueBooks} overdue book(s) first` }
   else 
-    return { allowed: true, message: "You may borrow up to 3 books" }
+    allowedMessage = { allowed: true, message: "You may borrow up to 3 books" }
+
+  return allowedMessage
+  
 }
